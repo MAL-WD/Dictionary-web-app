@@ -5,7 +5,8 @@ const sound=document.getElementById("sound")
 let info=document.querySelector(".info")
 let iAudio=document.querySelector(".voice i");
 let audio;
-
+let source=document.querySelector(".source")
+let sourceSpan=document.querySelector(".source a")
 function data(result,word){
     if (result.title) {
         wordinfo.style.display="none" 
@@ -37,8 +38,7 @@ function data(result,word){
             document.querySelector(".The-word span").innerHTML=result[0].phonetics[1].text
         wordinfo.classList.remove("none")
         info.classList.add("none")
-        let source=document.querySelector(".source")
-        let sourceSpan=document.querySelector(".source a")
+        
         source.classList.add("flex")
         sourceSpan.setAttribute("href",`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         sourceSpan.setAttribute("target","_blank")
